@@ -21,10 +21,10 @@ const Header: React.FC = () => {
         setAnchorNav(null);
     }
     return (
-      <AppBar position="static" sx={{width:'100%'}}>
+      <AppBar position="static" sx={{width:'100%', maxWidth: '100%', p: 0, m: 0}}>
         <Container maxWidth="xl">
             <Toolbar disableGutters>
-            <Box sx={{flexGrow: 1, display:'flex'}}>
+            <Box sx={{ml: 1, pl: 0}}>
                 <Link href='/'>
                     <HomeOutlined/>
                 </Link>
