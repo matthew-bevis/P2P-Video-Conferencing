@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <body>
+        <body style={{width:'100%', height:'100%'}}>
           <Header/>
             {children}
           <Footer/>

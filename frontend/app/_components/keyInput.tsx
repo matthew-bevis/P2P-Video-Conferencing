@@ -10,7 +10,7 @@ const KeyInput = () => {
     <form 
       onSubmit={(e) => {
         e.preventDefault();
-        console.log(key); // Or handle the key value as needed
+        console.log(key); 
       }}
     >
       <TextField
@@ -20,7 +20,7 @@ const KeyInput = () => {
         helperText="Key (10 characters)"
         value={key}
         onChange={(e) => setKey(e.target.value)}
-        style={{ marginRight: '8px' }} // Adjusted to directly modify spacing
+        style={{ marginRight: '8px' }} 
       />
       <Button type="submit" variant="contained">
         Submit

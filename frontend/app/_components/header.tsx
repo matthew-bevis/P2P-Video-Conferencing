@@ -21,7 +21,7 @@ const Header: React.FC = () => {
         setAnchorNav(null);
     }
     return (
-      <AppBar position="static">
+      <AppBar position="static" sx={{width:'100%'}}>
         <Container maxWidth="xl">
             <Toolbar disableGutters>
             <Box sx={{flexGrow: 1, display:'flex'}}>
