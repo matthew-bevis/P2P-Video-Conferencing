@@ -11,6 +11,18 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import boto3
+import json
+"""
+def get_database_credentials(secret_arn, region_name='us-east-2'):
+    client = boto3.client('secretsmanager', region_name=region_name)
+    response = client.get_secret_value(SecretId=secret_arn)
+    secret = json.loads(response['SecretString'])
+    return secret['username'], secret['password']
+"""
+
+#secret_arn = 'arn:aws:secretsmanager:us-east-2:590183821200:secret:rds!cluster-055a7d4b-1be2-47f4-8073-2d6c8e86f7b1-wddjy0'
+#username, password = get_database_credentials(secret_arn)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +37,7 @@ SECRET_KEY = 'django-insecure-+uhi78594)ada9$+q*ni3qmc-thij*q-a388jw@hbtp=2yw%#q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '']
 
 
 
@@ -40,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'backend',
+    # for bringing in WebSocket, chat protocols, long polling http
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -78,8 +92,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'unityviddb',
+        'USER': 'admin',
+        'PASSWORD': 'S0P4?0CeK~SqYk(XOvh{]4$b~5)u',
+        'HOST': 'unityviddb.cluster-cliasqk4o2hs.us-east-2.rds.amazonaws.com',
+        'PORT': '3306'
     }
 }
 

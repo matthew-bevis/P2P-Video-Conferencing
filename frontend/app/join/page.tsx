@@ -1,19 +1,18 @@
-'use client'
-
 import React from 'react';
-import { Grid } from "@mui/material";
-import KeyInput from '../_components/keyInput';
+import KeyInput from '../_components/keyInput'; // Adjust the import path as necessary
 
-export default function Home() {
+const Home: React.FC = () => {
+  const handleKeySubmit = (key: string) => {
+    console.log("Submitted Key:", key);
+    // Handle the key submission here
+  };
+
   return (
-    <Grid container spacing={2} sx={{ maxWidth: '100%', maxHeight: '100%', width: '100%', height: '100%' }}>
-      <Grid item xs={12}>
-        <p>You are on the join page.</p>
-        <p>Please enter the 10-character key provided by the host.</p>
-      </Grid>
-      <Grid item xs={12}>
-        <KeyInput/>
-      </Grid>
-    </Grid>
+    <div>
+      <p> Join page</p>
+      <KeyInput onSubmitKey={handleKeySubmit} />
+    </div>
   );
-}
+};
+
+export default Home;
