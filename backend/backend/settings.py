@@ -78,27 +78,23 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
-ALLOWED_HOSTS=[ 'unityviddb.database.windows.net', 'www.unityviddb.database.windows.net' ]
+ALLOWED_HOSTS=[ 'unityviddb.database.windows.net', 'www.unityviddb.database.windows.net', 'localhost', '127.0.0.1' ]
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('ENGINE'),
+        'ENGINE': os.getenv('ENGINE', 'mssql'),
         'NAME': os.getenv('NAME'),
         'USER': os.getenv('USER'),
         'PASSWORD': os.getenv('PASSWORD'),
         'HOST': os.getenv('HOST'),
-        'PORT': '',
-
+        'PORT': os.getenv('PORT', '1433'),
         'OPTIONS': {
             'driver': 'ODBC Driver 18 for SQL Server',
-            'SERVER': os.getenv('HOST'),
-            'DATABASE': os.getenv('NAME'),
-            'UID': os.getenv('USER'),
-            'PWD': os.getenv('PASSWORD'),
-}
+            'extra_params': 'TrustServerCertificate=yes;'
+        },
     }
 }
 
