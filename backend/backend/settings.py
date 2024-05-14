@@ -91,14 +91,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'unityviddb',
-        'USER': 'admin',
-        'PASSWORD': 'S0P4?0CeK~SqYk(XOvh{]4$b~5)u',
-        'HOST': 'unityviddb.cluster-cliasqk4o2hs.us-east-2.rds.amazonaws.com',
-        'PORT': '3306'
-    }
+
 }
 
 
