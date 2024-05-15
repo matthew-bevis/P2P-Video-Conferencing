@@ -13,3 +13,6 @@ export const getParticipant= async () => {
 export const getEncryptionKey = async () => {
     return axios.get(`${API_URL}EncryptionKey/`)
 }
+export const postEncryptionKey = async () => {
+    return axios.post(`${API_URL}EncryptionKey/`)
+}

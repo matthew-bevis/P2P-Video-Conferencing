@@ -1,3 +1,5 @@
+'use client'
+
 import { useMemo, useState } from 'react';
 import { Grid } from "@mui/material";
 import Link from "next/link"

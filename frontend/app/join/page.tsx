@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import KeyInput from '../_components/keyInput'; // Adjust the import path as necessary
 
